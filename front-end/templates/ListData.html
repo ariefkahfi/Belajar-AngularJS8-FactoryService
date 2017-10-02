@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div ng-controller="listController">
+            <table border="2">
+                <tr>
+                    <td>Id</td>
+                    <td>Nama</td>
+                    <td>Alamat</td>
+                    <td>Gender</td>
+                    <td>Delete</td>
+                    <td>Update</td>
+                </tr>
+                <tr ng-repeat="u in data">
+                    <td>{{u.id}}</td>
+                    <td>{{u.nama}}</td>
+                    <td>{{u.alamat}}</td>
+                    <td>{{u.gender}}</td>
+                    <td><a href="" ng-click="doDelete(u.id)">Delete Data</a></td>
+                    <td><button ng-click="viewForm(u.id)">Update Form</button></td>
+                </tr>
+            </table>
+            <div ng-show="ok">
+                <table>
+                    <tr>
+                        <td>Nama</td>
+                        <td><input type="text" ng-model="updateNama"/></td>
+                    </tr>
+                    <tr>
+                        <td>Alamat</td>
+                        <td><input type="text" ng-model="updateAlamat"/></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <input type="submit" value="Update data" ng-click="doUpdate()"/>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </body>
+</html>

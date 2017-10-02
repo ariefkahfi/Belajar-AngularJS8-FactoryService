@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="../node_modules/angular/angular.min.js"></script>
+        <script src="../node_modules/angular-route/angular-route.js"></script>
+    </head>
+    <body ng-app="mainApp" ng-init="item=[
+        {link:'#!/form',text:'Form Insert'},{link:'#!/list',text:'List Data'}
+    ]">
+        
+        <ul type="none">
+            <li ng-repeat="i in item">
+                <a href="{{i.link}}">{{i.text}}</a>
+            </li>
+        </ul>
+        
+        <div ng-view></div>
+    </body>
+    
+    <script>
+        var app = angular.module('mainApp',['ngRoute']);
+        
+        app.config(function ($routeProvider){
+           $routeProvider.
+                   
+           when('/form',{
+               templateUrl: 'templates/FormInsert.html',
+               controller : 'formController'
+           }).when('/list',{
+               templateUrl: 'templates/ListData.html',
+               controller : 'listController'
+           }).when('/update',{
+               templateUrl:'',
+               controller:''
+           }).otherwise({
+               redirectTo : '/angular_service1/'
+           });
+        });
+        
+    </script>
+  
+    
+    <!--AngularJS Controllers-->
+    <script src="jscontrollers/FormController.js"></script>
+    <script src="jscontrollers/ListController.js"></script>
+    
+    <!--User Factory-->
+    <script src="factory/UserFactory.js"></script>
+    
+    
+    <!--User Services-->
+    <script src="service/UserService.js"></script>
+    
+</html>

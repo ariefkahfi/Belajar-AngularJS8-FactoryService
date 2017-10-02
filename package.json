@@ -1,0 +1,7 @@
+{
+    "name": "arief",
+    "dependencies": {
+        "angular": "^1.6.6",
+        "angular-route": "^1.6.6"
+    }
+}

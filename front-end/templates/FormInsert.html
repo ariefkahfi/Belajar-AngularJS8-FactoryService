@@ -1,0 +1,34 @@
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <form ng-controller="formController">
+            <table>
+                <tr>
+                    <td>Nama</td>
+                    <td><input type="text" placeholder="Nama anda" ng-model="nama"/></td>
+                </tr>
+                <tr>
+                    <td>Alamat</td>
+                    <td><input type="text" placeholder="Alamat anda" ng-model="alamat"/></td>
+                </tr>
+                <tr>
+                    <td>Gender</td>
+                    <td><input type="radio" value="Male" ng-model="gender"/>Male</td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td><input type="radio" value="Female" ng-model="gender"/>Female</td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <input type="submit" value="Insert Data" ng-click="submitInsert()"/>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </body>
+</html>
